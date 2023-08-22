@@ -15,7 +15,6 @@
 		308C8E502A942061007270C6 /* Pokedex_VerkadaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E4F2A942061007270C6 /* Pokedex_VerkadaUITestsLaunchTests.swift */; };
 		308C8E662A9434D7007270C6 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E652A9434D7007270C6 /* PokemonViewModel.swift */; };
 		308C8E682A9434EB007270C6 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E672A9434EB007270C6 /* PokemonModel.swift */; };
-		308C8E6F2A94517B007270C6 /* PokemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E6E2A94517B007270C6 /* PokemonService.swift */; };
 		308C8E732A9463F1007270C6 /* PokedexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E722A9463F1007270C6 /* PokedexView.swift */; };
 		308C8E762A94692A007270C6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 308C8E752A94692A007270C6 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 		308C8E4F2A942061007270C6 /* Pokedex_VerkadaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex_VerkadaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		308C8E652A9434D7007270C6 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		308C8E672A9434EB007270C6 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
-		308C8E6E2A94517B007270C6 /* PokemonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonService.swift; sourceTree = "<group>"; };
 		308C8E722A9463F1007270C6 /* PokedexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +100,6 @@
 		308C8E312A942060007270C6 /* Pokedex-Verkada */ = {
 			isa = PBXGroup;
 			children = (
-				308C8E6D2A94516B007270C6 /* Services */,
 				308C8E5E2A942491007270C6 /* ViewModel */,
 				308C8E5D2A942488007270C6 /* View */,
 				308C8E5C2A942480007270C6 /* Model */,
@@ -160,14 +157,6 @@
 				308C8E652A9434D7007270C6 /* PokemonViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		308C8E6D2A94516B007270C6 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				308C8E6E2A94517B007270C6 /* PokemonService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +299,6 @@
 				308C8E662A9434D7007270C6 /* PokemonViewModel.swift in Sources */,
 				308C8E732A9463F1007270C6 /* PokedexView.swift in Sources */,
 				308C8E332A942060007270C6 /* Pokedex_VerkadaApp.swift in Sources */,
-				308C8E6F2A94517B007270C6 /* PokemonService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

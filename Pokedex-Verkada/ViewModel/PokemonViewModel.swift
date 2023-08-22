@@ -2,33 +2,33 @@ import Foundation
 import Combine
 
 class PokemonViewModel: ObservableObject {
-    @Published var pokemons: [PokemonListItem] = []
+    @Published var pokemonList: [PokemonListItem] = []
     @Published var selectedPokemon: Pokemon?
 
-    private var currentPage = 0
-    private let itemsPerPage = 20
-    private var canLoadMore = true
+    private var numPokemon = 0 // Number of pokemon currently processed.
+    private let numNext = 20 // Setting the limit of the request.
+    private var canLoad = true // Determine whether we can load more pokemon.
 
     // Fetch the list of pokemons
-    func fetchPokemons() {
-        guard canLoadMore else { return }
+    func fetchPokemon() {
+        guard canLoad else { return } // Break out
         
-        let urlString = "https://pokeapi.co/api/v2/pokemon?limit=\(itemsPerPage)&offset=\(currentPage)"
+        let urlString = "https://pokeapi.co/api/v2/pokemon?limit=\(numNext)&offset=\(numPokemon)" // Call the PokeAPI.
         if let url = URL(string: urlString) {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data {
                     do {
                         let pokemonList = try JSONDecoder().decode(PokemonList.self, from: data)
                         DispatchQueue.main.async {
-                            self.pokemons.append(contentsOf: pokemonList.results)
-                            self.currentPage += self.itemsPerPage
-                            
-                            if pokemonList.results.count < self.itemsPerPage {
-                                self.canLoadMore = false
+                            if pokemonList.results.count < self.numNext {
+                                self.canLoad = false // Reached the limit
                             }
+                            
+                            self.pokemonList.append(contentsOf: pokemonList.results)
+                            self.numPokemon += self.numNext
                         }
                     } catch {
-                        print("Error decoding Pokemon list: \(error)")
+                        print("Error with fetching list: \(error)")
                     }
                 }
             }
@@ -36,9 +36,9 @@ class PokemonViewModel: ObservableObject {
         }
     }
 
-    // Fetch the details of a specific pokemon
+    // Get the details of a particular pokemon.
     func fetchPokemonDetails(for pokemonItem: PokemonListItem) {
-        let urlString = "https://pokeapi.co/api/v2/pokemon/\(pokemonItem.name)"
+        let urlString = "https://pokeapi.co/api/v2/pokemon/\(pokemonItem.name)" // Use PokeAPI to get specific pokemon.
         if let url = URL(string: urlString) {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data {
@@ -48,7 +48,7 @@ class PokemonViewModel: ObservableObject {
                             self.selectedPokemon = pokemonDetails
                         }
                     } catch {
-                        print("Error decoding Pokemon details: \(error)")
+                        print("Error with fetching detail: \(error)")
                     }
                 }
             }
@@ -56,10 +56,10 @@ class PokemonViewModel: ObservableObject {
         }
     }
 
-    // Check if more data needs to be loaded
-    func checkAndLoadMoreData(currentItem: PokemonListItem) {
-        if let lastItem = pokemons.last, lastItem.name == currentItem.name {
-            fetchPokemons()
+    // There is more pokemon data to load if we reach the last pokemon.
+    func checkAndLoadMoreData(currPoke: PokemonListItem) {
+        if let lastPoke = pokemonList.last, lastPoke.name == currPoke.name {
+            fetchPokemon()
         }
     }
 }

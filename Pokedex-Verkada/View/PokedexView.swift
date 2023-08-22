@@ -13,36 +13,49 @@ struct PokedexView: View {
     
     var body: some View {
         VStack {
-            // Title
-            Text("Pokédex")
-                .font(.headline)
-        }
-        VStack {
-            HStack {
+            VStack { // Header
+                // Title
+                Text("Pokédex")
+                    .font(.headline)
+                Rectangle()
+                    .fill(Color.black)
+                    .frame(height: 10)
+            }.background(Color.white)
+            HStack { // Design elements
                 Circle()
+                    .foregroundColor(Color.blue)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
                     .frame(width: 50, height: 50)
-                    .foregroundColor(.blue)
                     .offset(x: -90.0, y: 20.0)
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                
                 Circle()
-                    .frame(width: 15, height: 15)
                     .foregroundColor(Color(hue: 1.0, saturation: 0.845, brightness: 0.482))
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                    .frame(width: 15, height: 15)
                     .offset(x: -85.0, y: 5.0)
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                
                 Circle()
-                    .frame(width: 15, height: 15)
                     .foregroundColor(.yellow)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                    .frame(width: 15, height: 15)
                     .offset(x: -80.0, y: 4.0)
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                
                 Circle()
-                    .frame(width: 15, height: 15)
                     .foregroundColor(.green)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                    .frame(width: 15, height: 15)
                     .offset(x: -75.0, y: 4.0)
                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
             }
+
             // Selected Pokemon Image
             if let selectedPokemon = viewModel.selectedPokemon {
-                WebImage(url: URL(string: selectedPokemon.sprites.front_default ?? ""))
+                WebImage(url: URL(string: selectedPokemon.sprites.front_default ?? "")) // Image caching via WebImage
+                    .onSuccess { image, data, cacheType in
+                    }
                     .resizable()
                     .indicator(.activity)
                     .transition(.fade(duration: 0.5))
@@ -50,7 +63,9 @@ struct PokedexView: View {
                     .frame(width: 100, height: 100)
                     .padding(.bottom, 20)
             } else {
-                WebImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/25.gif" ?? ""))
+                WebImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/25.gif"))
+                    .onSuccess { image, data, cacheType in
+                    }
                     .resizable()
                     .indicator(.activity)
                     .transition(.fade(duration: 0.5))
@@ -58,15 +73,14 @@ struct PokedexView: View {
                     .frame(width: 100, height: 100)
                     .padding([.leading, .bottom], 25.0)
             }
-            
            let gridItemLayout = [GridItem(.fixed(100)), GridItem(.fixed(100)), GridItem(.fixed(100))]
 
             // Pokemon Grid
             ScrollView {
                 LazyVGrid(columns: gridItemLayout, spacing: 20) {
-                    ForEach(viewModel.pokemons, id: \.name) { pokemonItem in
+                    ForEach(viewModel.pokemonList, id: \.name) { pokemonItem in
                         Button(action: {
-                            viewModel.fetchPokemonDetails(for: pokemonItem)
+                            viewModel.fetchPokemonDetails(for: pokemonItem) // Select a pokemon
                         }) {
                             VStack {
                                 Image("pokeball")
@@ -80,7 +94,7 @@ struct PokedexView: View {
                             .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                         .onAppear {
-                            viewModel.checkAndLoadMoreData(currentItem: pokemonItem)
+                            viewModel.checkAndLoadMoreData(currPoke: pokemonItem)
                         }
                     }
                 }
@@ -90,7 +104,7 @@ struct PokedexView: View {
         }
         .background(Color.red)
         .onAppear {
-            viewModel.fetchPokemons()
+            viewModel.fetchPokemon()
         }
     }
 }
