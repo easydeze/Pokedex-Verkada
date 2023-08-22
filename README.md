@@ -1,5 +1,7 @@
 # Pokedex-Verkada
 
+![alt text](https://github.com/easydeze/Pokedex-Verkada/blob/main/Simulator%20Screenshot%20-%20iPhone%2014%20Pro%20-%202023-08-22%20at%2016.09.18.png)
+![alt text](https://github.com/easydeze/Pokedex-Verkada/blob/main/Simulator%20Screenshot%20-%20iPhone%2014%20Pro%20-%202023-08-22%20at%2016.09.24.png)
 
 
 # Milestone 1
