@@ -16,4 +16,4 @@ I utilized MVVM architecture to separate the graphical user interface from the l
 Similar to the Pokédex from the show, I wanted to have the mobile app look similar to the actual device. Thus, the color palette and image assets are inspired by the series. I utilized a GIF of Pikachu as a placeholder, waiting for the user to click on their desired Pokémon.
 
 # Technical Decisions
-
+The decision to utilize SDWebImageSwiftUI in implementing image caching was one that I had to deliberate on for quite some time. But after reading the documentation and tutorials, the fact that this framework allowed for progressive image loading and animation, as well as utilizing caching to ensure that the same URL will never have to be requested twice made it easy. It is easily maintainable and future-proof.
