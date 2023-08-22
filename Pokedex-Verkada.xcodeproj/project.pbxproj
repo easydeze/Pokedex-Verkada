@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		308C8E332A942060007270C6 /* Pokedex_VerkadaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E322A942060007270C6 /* Pokedex_VerkadaApp.swift */; };
-		308C8E352A942060007270C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E342A942060007270C6 /* ContentView.swift */; };
 		308C8E372A942061007270C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308C8E362A942061007270C6 /* Assets.xcassets */; };
 		308C8E3A2A942061007270C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308C8E392A942061007270C6 /* Preview Assets.xcassets */; };
 		308C8E442A942061007270C6 /* Pokedex_VerkadaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E432A942061007270C6 /* Pokedex_VerkadaTests.swift */; };
 		308C8E4E2A942061007270C6 /* Pokedex_VerkadaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E4D2A942061007270C6 /* Pokedex_VerkadaUITests.swift */; };
 		308C8E502A942061007270C6 /* Pokedex_VerkadaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E4F2A942061007270C6 /* Pokedex_VerkadaUITestsLaunchTests.swift */; };
+		308C8E662A9434D7007270C6 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E652A9434D7007270C6 /* PokemonViewModel.swift */; };
+		308C8E682A9434EB007270C6 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E672A9434EB007270C6 /* PokemonModel.swift */; };
+		308C8E6F2A94517B007270C6 /* PokemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E6E2A94517B007270C6 /* PokemonService.swift */; };
+		308C8E732A9463F1007270C6 /* PokedexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C8E722A9463F1007270C6 /* PokedexView.swift */; };
+		308C8E762A94692A007270C6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 308C8E752A94692A007270C6 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		308C8E2F2A942060007270C6 /* Pokedex-Verkada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-Verkada.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		308C8E322A942060007270C6 /* Pokedex_VerkadaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex_VerkadaApp.swift; sourceTree = "<group>"; };
-		308C8E342A942060007270C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		308C8E362A942061007270C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		308C8E392A942061007270C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		308C8E3F2A942061007270C6 /* Pokedex-VerkadaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pokedex-VerkadaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,10 @@
 		308C8E492A942061007270C6 /* Pokedex-VerkadaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pokedex-VerkadaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		308C8E4D2A942061007270C6 /* Pokedex_VerkadaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex_VerkadaUITests.swift; sourceTree = "<group>"; };
 		308C8E4F2A942061007270C6 /* Pokedex_VerkadaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex_VerkadaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		308C8E652A9434D7007270C6 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		308C8E672A9434EB007270C6 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		308C8E6E2A94517B007270C6 /* PokemonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonService.swift; sourceTree = "<group>"; };
+		308C8E722A9463F1007270C6 /* PokedexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308C8E762A94692A007270C6 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +102,11 @@
 		308C8E312A942060007270C6 /* Pokedex-Verkada */ = {
 			isa = PBXGroup;
 			children = (
+				308C8E6D2A94516B007270C6 /* Services */,
+				308C8E5E2A942491007270C6 /* ViewModel */,
+				308C8E5D2A942488007270C6 /* View */,
+				308C8E5C2A942480007270C6 /* Model */,
 				308C8E322A942060007270C6 /* Pokedex_VerkadaApp.swift */,
-				308C8E342A942060007270C6 /* ContentView.swift */,
 				308C8E362A942061007270C6 /* Assets.xcassets */,
 				308C8E382A942061007270C6 /* Preview Content */,
 			);
@@ -127,6 +138,38 @@
 			path = "Pokedex-VerkadaUITests";
 			sourceTree = "<group>";
 		};
+		308C8E5C2A942480007270C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				308C8E672A9434EB007270C6 /* PokemonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		308C8E5D2A942488007270C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				308C8E722A9463F1007270C6 /* PokedexView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		308C8E5E2A942491007270C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				308C8E652A9434D7007270C6 /* PokemonViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		308C8E6D2A94516B007270C6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				308C8E6E2A94517B007270C6 /* PokemonService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +186,9 @@
 			dependencies = (
 			);
 			name = "Pokedex-Verkada";
+			packageProductDependencies = (
+				308C8E752A94692A007270C6 /* SDWebImageSwiftUI */,
+			);
 			productName = "Pokedex-Verkada";
 			productReference = 308C8E2F2A942060007270C6 /* Pokedex-Verkada.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +261,9 @@
 				Base,
 			);
 			mainGroup = 308C8E262A942060007270C6;
+			packageReferences = (
+				308C8E742A94692A007270C6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 308C8E302A942060007270C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				308C8E352A942060007270C6 /* ContentView.swift in Sources */,
+				308C8E682A9434EB007270C6 /* PokemonModel.swift in Sources */,
+				308C8E662A9434D7007270C6 /* PokemonViewModel.swift in Sources */,
+				308C8E732A9463F1007270C6 /* PokedexView.swift in Sources */,
 				308C8E332A942060007270C6 /* Pokedex_VerkadaApp.swift in Sources */,
+				308C8E6F2A94517B007270C6 /* PokemonService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +629,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		308C8E742A94692A007270C6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		308C8E752A94692A007270C6 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 308C8E742A94692A007270C6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 308C8E272A942060007270C6 /* Project object */;
 }
